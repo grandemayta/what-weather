@@ -1,0 +1,14 @@
+{
+  "name": "what-weather",
+  "version": "1.0.0",
+  "author": "Gabriel Mayta",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielmayta/what-weather.git"
+  },
+  "license": "MIT"
+}
