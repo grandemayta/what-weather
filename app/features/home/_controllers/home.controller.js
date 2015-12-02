@@ -4,19 +4,17 @@
  *
  */
 
-(function () {
-
-    'use strict';
-
-    angular
-        .module("app.home.controllers")
-        .controller("HomeController", HomeController);
+angular
+    .module("app.home.controllers", [])
+    .controller("HomeController", HomeController);
 
 
-    HomeController.$inject = ['$scope'];
+HomeController.$inject = [];
 
-    function HomeController($scope) {
-        $scope.message = "Hello world!";
-    }
+function HomeController() {
+    
+    var vm = this;
 
-});
+    vm.message = "Hello world!";
+
+}

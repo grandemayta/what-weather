@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<div ng-controller="HomeController">
-    <a ng-bind="message"></a>
-</div>
+<ui-view></ui-view>
 
 
 <!-- ANGULAR DEPENDENCIES -->
@@ -21,7 +19,8 @@
 <script src="bootstrap/index.js"></script>
 
 <!-- APPLICATION FEATURES -->
-<script src="features/home/module.js"></script>
+<script src="features/home/home.module.js"></script>
+<script src="features/home/home.route.js"></script>
 <script src="features/home/_controllers/home.controller.js"></script>
 
 
