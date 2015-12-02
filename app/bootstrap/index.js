@@ -4,8 +4,18 @@
  *
  */
 
+require("angular");
+require("angular-ui-router");
+require("oclazyload");
+require("../features/home/home.module");
+require("../features/detail/detail.module");
+
 angular
     .module("app", [
         "ui.router",
-        "app.home"
+        "oc.lazyLoad",
+        "app.home",
+        "app.detail"
     ]);
+
+angular.bootstrap(document.body, ["app"]);

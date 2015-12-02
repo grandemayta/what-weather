@@ -17,7 +17,16 @@ function HomeRoute($stateProvider, $urlRouterProvider) {
             url: "/",
             controller: "HomeController",
             controllerAs: "home",
-            template: "<h1 ng-bind='home.message'></h1>"
+            template: require("./_views/home.html"),
+            resolve: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
+                var deferred = $q.defer();
+                require.ensure([], function (require) {
+                    var module = require("./_controllers/home.controller");
+                    $ocLazyLoad.load({name: "app.home.controllers"});
+                    deferred.resolve(module);
+                });
+                return deferred.promise;
+            }]
         });
 
     $urlRouterProvider.otherwise("/");

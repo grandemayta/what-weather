@@ -4,8 +4,9 @@
  *
  */
 
+require("./home.route");
+
 angular
     .module("app.home", [
-        "app.home.route",
-        "app.home.controllers"
+        "app.home.route"
     ]);
