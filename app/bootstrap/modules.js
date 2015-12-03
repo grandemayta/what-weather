@@ -13,5 +13,4 @@ angular
         "app.core",
         "app.home",
         "app.detail"
-
     ]);
