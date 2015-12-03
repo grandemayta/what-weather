@@ -4,9 +4,9 @@
  *
  */
 
-require("./detail.route");
+require("./_controllers/detail.controller");
 
 angular
-    .module("app.detail", [
-        "app.detail.route"
+    .module("app.detail.feature", [
+        "app.detail.feature.detail-controller"
     ]);
