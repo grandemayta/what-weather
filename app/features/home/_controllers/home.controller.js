@@ -5,7 +5,7 @@
  */
 
 angular
-    .module("app.home.controllers", [])
+    .module("app.home.home-controller", [])
     .controller("HomeController", HomeController);
 
 

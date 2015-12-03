@@ -5,7 +5,7 @@
  */
 
 angular
-    .module("app.home.route", [])
+    .module("app.home.config", [])
     .config(HomeRoute);
 
 HomeRoute.$inject = ["$stateProvider", "$urlRouterProvider"];
@@ -28,8 +28,8 @@ function HomeRoute($stateProvider, $urlRouterProvider) {
             resolve: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
                 var deferred = $q.defer();
                 require.ensure([], function (require) {
-                    var module = require("./_controllers/home.controller");
-                    $ocLazyLoad.load({name: "app.home.controllers"});
+                    var module = require("./home.module");
+                    $ocLazyLoad.load({name: "app.home"});
                     deferred.resolve(module);
                 });
                 return deferred.promise;
