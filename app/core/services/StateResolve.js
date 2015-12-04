@@ -13,7 +13,6 @@ StateResolve.$inject = ["$q", "$http"];
 function StateResolve($q, $http) {
 
     return function (cities) {
-
         var baseUrl = "https://query.yahooapis.com/v1/public/yql",
             format = "format=json",
             query = "SELECT * FROM " +

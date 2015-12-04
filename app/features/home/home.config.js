@@ -19,20 +19,22 @@ function HomeRoute($stateProvider, $urlRouterProvider) {
             controllerAs: "home",
             templateProvider: ["$q", function ($q) {
                 var deferred = $q.defer();
-                require.ensure(["./_views/home.html"], function () {
-                    var template = require("./_views/home.html");
-                    deferred.resolve(template);
-                });
+                require.ensure([], function (require) {
+                        var template = require("./_views/home.html");
+                        deferred.resolve(template);
+                    }
+                );
                 return deferred.promise;
             }],
             resolve: {
-                init: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
+                load: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
                     var deferred = $q.defer();
                     require.ensure([], function (require) {
-                        var module = require("./home.module");
-                        $ocLazyLoad.load({name: "home.module"});
-                        deferred.resolve(module);
-                    });
+                            var module = require("./home.module");
+                            $ocLazyLoad.load({name: "home.module"});
+                            deferred.resolve(module);
+                        }
+                    );
                     return deferred.promise;
                 }],
                 homeResponse: ["StateResolve", function (StateResolve) {

@@ -19,21 +19,25 @@ function DetailRoute($stateProvider) {
             controllerAs: "detail",
             templateProvider: ["$q", function ($q) {
                 var deferred = $q.defer();
-                require.ensure(["./_views/detail.html"], function () {
-                    var template = require("./_views/detail.html");
-                    deferred.resolve(template);
-                });
+                require.ensure([], function (require) {
+                        var template = require("./_views/detail.html");
+                        deferred.resolve(template);
+                    }
+                );
                 return deferred.promise;
             }],
-            resolve: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
-                var deferred = $q.defer();
-                require.ensure([], function (require) {
-                    var module = require("./detail.module");
-                    $ocLazyLoad.load({name: "detail.module"});
-                    deferred.resolve(module);
-                });
-                return deferred.promise;
-            }]
+            resolve: {
+                load: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
+                    var deferred = $q.defer();
+                    require.ensure([], function (require) {
+                            var module = require("./detail.module");
+                            $ocLazyLoad.load({name: "detail.module"});
+                            deferred.resolve(module);
+                        }
+                    );
+                    return deferred.promise;
+                }]
+            }
         });
 
 }
