@@ -5,7 +5,7 @@
  */
 
 angular
-    .module("app.detail", [])
+    .module("app.features.detail", [])
     .config(DetailRoute);
 
 DetailRoute.$inject = ["$stateProvider"];
@@ -29,7 +29,7 @@ function DetailRoute($stateProvider) {
                 var deferred = $q.defer();
                 require.ensure([], function (require) {
                     var module = require("./detail.module");
-                    $ocLazyLoad.load({name: "app.detail.feature"});
+                    $ocLazyLoad.load({name: "detail.module"});
                     deferred.resolve(module);
                 });
                 return deferred.promise;

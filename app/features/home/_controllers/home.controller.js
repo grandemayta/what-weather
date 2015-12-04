@@ -5,16 +5,18 @@
  */
 
 angular
-    .module("app.home.feature.home-controller", [])
+    .module("home.module.home-controller", [])
     .controller("HomeController", HomeController);
 
 
-HomeController.$inject = [];
+HomeController.$inject = ["homeResponse"];
 
-function HomeController() {
+function HomeController(homeResponse) {
 
     var vm = this;
 
     vm.message = "Hello world!";
+
+    console.log(homeResponse);
 
 }

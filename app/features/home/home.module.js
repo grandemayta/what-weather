@@ -7,6 +7,6 @@
 require("./_controllers/home.controller");
 
 angular
-    .module("app.home.feature", [
-        "app.home.feature.home-controller"
+    .module("home.module", [
+        "home.module.home-controller"
     ]);

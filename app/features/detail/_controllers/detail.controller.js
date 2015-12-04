@@ -5,7 +5,7 @@
  */
 
 angular
-    .module("app.detail.feature.detail-controller", [])
+    .module("detail.module.detail-controller", [])
     .controller("DetailController", DetailController);
 
 

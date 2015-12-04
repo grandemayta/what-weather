@@ -7,13 +7,16 @@
 require("angular");
 require("angular-ui-router");
 require("oclazyload");
-require("./modules");
+
+require("../core/services/services.module");
+require("../features/features.module");
 
 angular
     .module("app", [
         "ui.router",
         "oc.lazyLoad",
-        "app.modules"
+        "app.services",
+        "app.features"
     ]);
 
 angular.bootstrap(document.body, ["app"]);

@@ -7,6 +7,6 @@
 require("./_controllers/detail.controller");
 
 angular
-    .module("app.detail.feature", [
-        "app.detail.feature.detail-controller"
+    .module("detail.module", [
+        "detail.module.detail-controller"
     ]);

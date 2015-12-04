@@ -5,7 +5,7 @@
  */
 
 angular
-    .module("app.home", [])
+    .module("app.features.home", [])
     .config(HomeRoute);
 
 HomeRoute.$inject = ["$stateProvider", "$urlRouterProvider"];
@@ -25,15 +25,20 @@ function HomeRoute($stateProvider, $urlRouterProvider) {
                 });
                 return deferred.promise;
             }],
-            resolve: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
-                var deferred = $q.defer();
-                require.ensure([], function (require) {
-                    var module = require("./home.module");
-                    $ocLazyLoad.load({name: "app.home.feature"});
-                    deferred.resolve(module);
-                });
-                return deferred.promise;
-            }]
+            resolve: {
+                init: ["$q", "$ocLazyLoad", function ($q, $ocLazyLoad) {
+                    var deferred = $q.defer();
+                    require.ensure([], function (require) {
+                        var module = require("./home.module");
+                        $ocLazyLoad.load({name: "home.module"});
+                        deferred.resolve(module);
+                    });
+                    return deferred.promise;
+                }],
+                homeResponse: ["StateResolve", function (StateResolve) {
+                    return StateResolve("\"Milan\", \"London\", \"Paris\"");
+                }]
+            }
         });
 
     $urlRouterProvider.otherwise("/");
