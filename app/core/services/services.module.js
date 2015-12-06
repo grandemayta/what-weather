@@ -4,7 +4,7 @@
  *
  */
 
-require("./StateResolve");
+require("./state-resolve.service");
 
 angular
     .module("app.services", [

@@ -1,0 +1,109 @@
+/**
+ *
+ * Created by Gabriel Mayta
+ *
+ */
+@import "../../node_modules/swiper/dist/css/swiper.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border-radius: 0;
+  cursor: default;
+}
+
+/************* SWIPER CSS *************/
+.swiper-container {
+  display: block;
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+
+.swiper-slide-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #e6950e;
+  overflow: auto;
+}
+
+/************* CARD WEATHER *************/
+
+h1, h2, h3, .weather-icon {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 26px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2 {
+  padding-top: 20px;
+  font-size: 100px;
+  font-weight: 300;
+}
+
+h3 {
+  padding-top: 20px;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.weather-icon {
+  padding: 30px 0 20px 0;
+  font-size: 60px;
+}
+
+ul {
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  width: 100%;
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  overflow: hidden;
+}
+
+ul li span, ul li i {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+ul li span {
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+ul li i {
+  padding-top: 20px;
+  font-weight: 700;
+  font-size: 30px;
+}

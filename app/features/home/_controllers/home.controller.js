@@ -14,9 +14,6 @@ HomeController.$inject = ["homeResponse"];
 function HomeController(homeResponse) {
 
     var vm = this;
-
-    vm.message = "Hello world!";
-
-    console.log(homeResponse);
+    vm.data = homeResponse;
 
 }

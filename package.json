@@ -5,11 +5,16 @@
   "dependencies": {
     "angular": "1.4.8",
     "angular-ui-router": "0.2.15",
-    "oclazyload": "1.0.9"
+    "lodash": "3.10.1",
+    "oclazyload": "1.0.9",
+    "swiper": "3.2.6"
   },
   "devDependencies": {
+    "css-loader": "0.23.0",
     "extract-text-webpack-plugin": "0.9.1",
-    "raw-loader": "^0.5.1",
+    "node-sass": "3.4.2",
+    "raw-loader": "0.5.1",
+    "sass-loader": "3.1.2",
     "webpack": "1.12.9",
     "webpack-dev-server": "1.14.0"
   },
